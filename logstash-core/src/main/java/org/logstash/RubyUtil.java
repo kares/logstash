@@ -74,6 +74,7 @@ import org.logstash.log.LoggerExt;
 import org.logstash.log.SlowLoggerExt;
 import org.logstash.plugins.HooksRegistryExt;
 import org.logstash.plugins.UniversalPluginExt;
+import org.logstash.settings.SettingExt;
 import org.logstash.util.UtilExt;
 import org.logstash.plugins.factory.ExecutionContextFactoryExt;
 import org.logstash.plugins.factory.PluginMetricsFactoryExt;
@@ -246,6 +247,10 @@ public final class RubyUtil {
 
     private static final RubyModule PLUGINS_MODULE;
 
+    private static final RubyClass SETTINGS_CLASS;
+
+    private static final RubyClass SETTING_CLASS;
+
     static {
         RUBY = Ruby.getGlobalRuntime();
         LOGSTASH_MODULE = RUBY.getOrCreateModule("LogStash");
@@ -336,6 +341,13 @@ public final class RubyUtil {
             "AbstractDeadLetterQueueWriterExt", RUBY.getObject(),
             ObjectAllocator.NOT_ALLOCATABLE_ALLOCATOR
         );
+
+//        SETTINGS_CLASS = LOGSTASH_MODULE.getClass("Settings");
+        SETTINGS_CLASS = LOGSTASH_MODULE.defineOrGetClassUnder("Settings", RUBY.getObject());
+        SETTING_CLASS = SETTINGS_CLASS.defineClassUnder("Setting", RUBY.getObject(), SettingExt::new);
+        SETTING_CLASS.defineAnnotatedMethods(SettingExt.class);
+//        SETTING_CLASS = setupLogstashClass(SETTINGS_CLASS, SettingExt::new, SettingExt.class);
+
         ABSTRACT_DLQ_WRITER_CLASS.defineAnnotatedMethods(AbstractDeadLetterQueueWriterExt.class);
         DUMMY_DLQ_WRITER_CLASS = UTIL_MODULE.defineClassUnder(
             "DummyDeadLetterQueueWriter", ABSTRACT_DLQ_WRITER_CLASS,
