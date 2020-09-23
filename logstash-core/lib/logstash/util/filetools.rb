@@ -2,7 +2,8 @@
 require "net/http"
 require "uri"
 require "digest/sha1"
-require 'fileutils'
+require "fileutils"
+require "socket"
 
 module LogStash::Util::FileTools
   extend self

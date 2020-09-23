@@ -27,8 +27,6 @@ require "logstash/pipeline_action"
 require "logstash/state_resolver"
 require "logstash/pipelines_registry"
 require "stud/trap"
-require "uri"
-require "socket"
 require "securerandom"
 
 LogStash::Environment.load_locale!

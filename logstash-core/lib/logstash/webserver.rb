@@ -15,12 +15,11 @@
 # specific language governing permissions and limitations
 # under the License.
 
-require "logstash/api/rack_app"
+require "concurrent/atomic/atomic_boolean"
 require "puma"
 require "puma/server"
 require "logstash/patches/puma"
-require "concurrent"
-require "thread"
+require "logstash/api/rack_app"
 
 module LogStash
   class WebServer

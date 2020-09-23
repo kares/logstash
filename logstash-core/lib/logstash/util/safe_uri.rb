@@ -15,8 +15,9 @@
 # specific language governing permissions and limitations
 # under the License.
 
-require "logstash/util"
 require "forwardable"
+require "uri"
+require "logstash/util"
 
 # This class exists to quietly wrap a password string so that, when printed or
 # logged, you don't accidentally print the password itself.
@@ -25,7 +26,6 @@ class LogStash::Util::SafeURI
   HOSTNAME_PORT_REGEX=/\A(?<hostname>([A-Za-z0-9\.\-]+)|\[[0-9A-Fa-f\:]+\])(:(?<port>\d+))?\Z/
 
   extend Forwardable
-
 
   attr_reader :uri
 

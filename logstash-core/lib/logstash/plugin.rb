@@ -16,7 +16,6 @@
 # under the License.
 
 require "logstash/config/mixin"
-require "concurrent"
 require "securerandom"
 
 require_relative 'plugin_metadata'

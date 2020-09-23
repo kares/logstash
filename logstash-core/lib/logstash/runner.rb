@@ -32,7 +32,7 @@ if !LogStash::OSS
 end
 
 require "clamp"
-require "net/http"
+require "uri"
 
 require "logstash-core/logstash-core"
 require "logstash/environment"
@@ -50,11 +50,11 @@ require 'logstash/plugins'
 require "logstash/modules/util"
 require "logstash/bootstrap_check/default_config"
 require "logstash/bootstrap_check/persisted_queue_config"
-require "set"
-
-java_import 'org.logstash.FileLockFactory'
 
 class LogStash::Runner < Clamp::StrictCommand
+
+  java_import 'org.logstash.FileLockFactory'
+
   include LogStash::Util::Loggable
 
   LogStash::Util::SettingsHelper.pre_process

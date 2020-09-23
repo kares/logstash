@@ -15,6 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
+require "concurrent/atomic/atomic_boolean"
 require "logstash/event"
 require "logstash/plugin"
 require "logstash/config/mixin"

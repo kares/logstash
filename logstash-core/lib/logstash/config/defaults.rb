@@ -15,8 +15,6 @@
 # specific language governing permissions and limitations
 # under the License.
 
-require "concurrent"
-
 module LogStash module Config module Defaults
 
   extend self
@@ -30,6 +28,6 @@ module LogStash module Config module Defaults
   end
 
   def cpu_cores
-    Concurrent.processor_count
+    java.lang.Runtime.getRuntime.availableProcessors
   end
 end end end

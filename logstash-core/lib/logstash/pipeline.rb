@@ -17,7 +17,8 @@
 
 require "thread"
 require "stud/interval"
-require "concurrent"
+require "concurrent/atomic/atomic_boolean"
+require "concurrent/atomic/atomic_reference"
 require "logstash-core/logstash-core"
 require "logstash/event"
 require "logstash/config/file"

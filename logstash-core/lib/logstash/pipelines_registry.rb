@@ -15,6 +15,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
+require 'concurrent/atomic/atomic_boolean'
+
 module LogStash
   class PipelineState
     attr_reader :pipeline_id

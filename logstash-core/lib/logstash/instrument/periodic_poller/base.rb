@@ -16,7 +16,8 @@
 # under the License.
 
 require "logstash/util"
-require "concurrent"
+require "concurrent/errors"
+require "concurrent/timer_task"
 
 module LogStash module Instrument module PeriodicPoller
   class Base

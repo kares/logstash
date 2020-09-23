@@ -15,9 +15,9 @@
 # specific language governing permissions and limitations
 # under the License.
 
-require "concurrent"
-require "logstash/instrument/metric_type"
+require "concurrent/map"
 require "thread"
+require "logstash/instrument/metric_type"
 
 module LogStash module Instrument
   # The Metric store the data structure that make sure the data is

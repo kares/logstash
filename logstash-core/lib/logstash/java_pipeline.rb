@@ -16,8 +16,8 @@
 # under the License.
 
 require "thread"
-require "concurrent"
 require "thwait"
+require "concurrent/atomic/atomic_boolean"
 require "logstash/filters/base"
 require "logstash/inputs/base"
 require "logstash/outputs/base"
