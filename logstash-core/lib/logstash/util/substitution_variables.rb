@@ -15,11 +15,11 @@
 # specific language governing permissions and limitations
 # under the License.
 
-java_import "org.logstash.secret.store.SecretStoreExt"
-
 require_relative 'lazy_singleton'
 
 module ::LogStash::Util::SubstitutionVariables
+
+  java_import "org.logstash.secret.store.SecretStoreExt"
 
   include LogStash::Util::Loggable
 

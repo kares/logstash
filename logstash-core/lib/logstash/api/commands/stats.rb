@@ -20,9 +20,6 @@ require 'logstash/util/thread_dump'
 require 'logstash/config/pipelines_info'
 require_relative "hot_threads_reporter"
 
-java_import java.nio.file.Files
-java_import java.nio.file.Paths
-
 module LogStash
   module Api
     module Commands

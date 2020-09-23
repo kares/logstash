@@ -23,6 +23,8 @@ module LogStash
     module Commands
       class Node < Commands::Base
 
+        java_import "java.lang.management.ManagementFactory"
+
         def all(selected_fields=[])
           payload = {
             :pipelines => pipelines,

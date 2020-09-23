@@ -15,9 +15,10 @@
 # specific language governing permissions and limitations
 # under the License.
 
-java_import 'org.logstash.instrument.reports.ThreadsReport'
-
 class HotThreadsReport
+
+  java_import 'org.logstash.instrument.reports.ThreadsReport'
+
   STRING_SEPARATOR_LENGTH = 80.freeze
   HOT_THREADS_STACK_TRACES_SIZE_DEFAULT = 50.freeze
 
