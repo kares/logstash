@@ -18,7 +18,6 @@
 require "logstash/event"
 require "logstash/plugin"
 require "logstash/config/mixin"
-require "concurrent/atomic/atomic_fixnum"
 
 class LogStash::Outputs::Base < LogStash::Plugin
   include LogStash::Util::Loggable

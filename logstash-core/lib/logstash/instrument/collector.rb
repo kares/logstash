@@ -18,8 +18,6 @@
 require "logstash/instrument/metric_store"
 require "concurrent/timer_task"
 require "observer"
-require "singleton"
-require "thread"
 
 module LogStash module Instrument
   # The Collector is the single point of reference for all

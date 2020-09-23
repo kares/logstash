@@ -15,7 +15,6 @@
 # specific language governing permissions and limitations
 # under the License.
 
-require "rubygems/package"
 require "logstash/plugin"
 require "logstash/modules/scaffold"
 require "logstash/codecs/base"

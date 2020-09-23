@@ -17,7 +17,6 @@
 
 require "logstash/config/grammar"
 require "logstash/config/config_ast"
-require "logger"
 
 class LogStash::Config::File
   include Enumerable
