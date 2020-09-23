@@ -15,6 +15,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
+require "java"
+require "rbconfig"
 require "logstash/environment"
 
 module LogStash::Util
@@ -163,7 +165,6 @@ module LogStash::Util
   # to support these pure Ruby object monkey patches.
   # see logstash/json.rb and logstash/java_integration.rb
 
-  require "java"
   # recursively convert any Java LinkedHashMap and ArrayList to pure Ruby.
   # will not recurse into pure Ruby objects. Pure Ruby object should never
   # contain LinkedHashMap and ArrayList since these are only created at
