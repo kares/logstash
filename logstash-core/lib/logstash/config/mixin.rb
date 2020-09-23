@@ -15,13 +15,14 @@
 # specific language governing permissions and limitations
 # under the License.
 
-require "logstash/util/password"
-require "logstash/util/safe_uri"
-require "logstash/version"
-require "logstash/environment"
-require "logstash/util/plugin_version"
-require "logstash/codecs/delegator"
 require "filesize"
+require "logstash/environment"
+require "logstash/codecs/delegator"
+require "logstash/util/password"
+require "logstash/util/plugin_version"
+require "logstash/util/safe_uri"
+require "logstash/util/substitution_variables"
+require "logstash/version"
 
 LogStash::Environment.load_locale!
 
