@@ -21,9 +21,6 @@ require "logstash/compiler/lscl/helpers"
 require "logstash/config/string_escape"
 require "logstash/util"
 
-java_import org.logstash.config.ir.DSL
-java_import org.logstash.common.SourceWithMetadata
-
 module LogStashCompilerLSCLGrammar; module LogStash; module Compiler; module LSCL; module AST
   PROCESS_ESCAPE_SEQUENCES = :process_escape_sequences
 

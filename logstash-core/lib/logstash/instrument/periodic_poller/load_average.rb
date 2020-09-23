@@ -15,9 +15,10 @@
 # specific language governing permissions and limitations
 # under the License.
 
-java_import "java.lang.management.ManagementFactory"
-
 module LogStash module Instrument module PeriodicPoller
+
+  java_import "java.lang.management.ManagementFactory"
+
   class LoadAverage
     class Windows
       def self.get

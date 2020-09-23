@@ -15,9 +15,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
-java_import org.logstash.instrument.metrics.gauge.LazyDelegatingGauge
 module LogStash module Instrument module MetricType
-  class Gauge < LazyDelegatingGauge
+  class Gauge < org.logstash.instrument.metrics.gauge.LazyDelegatingGauge
 
     def initialize(namespaces, key)
       super(key.to_s)

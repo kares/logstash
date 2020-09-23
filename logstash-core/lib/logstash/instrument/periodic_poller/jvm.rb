@@ -20,20 +20,20 @@ require "logstash/instrument/periodic_poller/load_average"
 require "logstash/environment"
 require "set"
 
-java_import 'com.sun.management.UnixOperatingSystemMXBean'
-java_import 'java.lang.management.ManagementFactory'
-java_import 'java.lang.management.OperatingSystemMXBean'
-java_import 'java.lang.management.GarbageCollectorMXBean'
-java_import 'java.lang.management.RuntimeMXBean'
-java_import 'javax.management.MBeanServer'
-java_import 'javax.management.ObjectName'
-java_import 'javax.management.AttributeList'
-java_import 'javax.naming.directory.Attribute'
-java_import 'org.logstash.instrument.reports.MemoryReport'
-java_import 'org.logstash.instrument.reports.ProcessReport'
-
-
 module LogStash module Instrument module PeriodicPoller
+
+  java_import 'com.sun.management.UnixOperatingSystemMXBean'
+  java_import 'java.lang.management.ManagementFactory'
+  java_import 'java.lang.management.OperatingSystemMXBean'
+  java_import 'java.lang.management.GarbageCollectorMXBean'
+  java_import 'java.lang.management.RuntimeMXBean'
+  java_import 'javax.management.MBeanServer'
+  java_import 'javax.management.ObjectName'
+  java_import 'javax.management.AttributeList'
+  java_import 'javax.naming.directory.Attribute'
+  java_import 'org.logstash.instrument.reports.MemoryReport'
+  java_import 'org.logstash.instrument.reports.ProcessReport'
+
   class JVM < Base
     class GarbageCollectorName
       YOUNG_GC_NAMES = Set.new(["Copy", "PS Scavenge", "ParNew", "G1 Young Generation", "scavenge", "GPGC New"])

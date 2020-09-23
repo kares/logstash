@@ -15,10 +15,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
-java_import org.logstash.instrument.metrics.counter.LongCounter
-
 module LogStash module Instrument module MetricType
-  class Counter < LongCounter
+  class Counter < org.logstash.instrument.metrics.counter.LongCounter
 
     def initialize(namespaces, key)
       super(key.to_s)

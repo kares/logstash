@@ -115,6 +115,7 @@ CONF
   end
 
   def config_string
+    require "erb"
     # process the template and settings
     # send back as a string
     renderer = ERB.new(FileReader.read(template))
