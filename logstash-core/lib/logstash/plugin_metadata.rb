@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-require 'thread_safe/cache'
+require 'concurrent/map'
 
 module LogStash
   ##
@@ -44,7 +44,7 @@ module LogStash
   class PluginMetadata
     include LogStash::Util::Loggable
 
-    REGISTRY = ThreadSafe::Cache.new unless defined?(REGISTRY)
+    REGISTRY = Concurrent::Map.new unless defined?(REGISTRY)
 
     class << self
       ##
@@ -92,7 +92,7 @@ module LogStash
     # @see [LogStash::PluginMetadata#for_plugin(String)]
     # @api private
     def initialize
-      @datastore = ThreadSafe::Cache.new
+      @datastore = Concurrent::Map.new
     end
 
     ##
