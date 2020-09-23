@@ -15,16 +15,6 @@
 # specific language governing permissions and limitations
 # under the License.
 
-require "rack"
-require "sinatra/base"
-require "logstash/api/modules/base"
-require "logstash/api/modules/node"
-require "logstash/api/modules/node_stats"
-require "logstash/api/modules/plugins"
-require "logstash/api/modules/root"
-require "logstash/api/modules/logging"
-require "logstash/api/modules/stats"
-
 module LogStash
   module Api
     module RackApp
@@ -91,6 +81,17 @@ module LogStash
       end
 
       def self.app(logger, agent, environment)
+        require "rack"
+        require "sinatra/base"
+
+        require "logstash/api/modules/base"
+        require "logstash/api/modules/node"
+        require "logstash/api/modules/node_stats"
+        require "logstash/api/modules/plugins"
+        require "logstash/api/modules/root"
+        require "logstash/api/modules/logging"
+        require "logstash/api/modules/stats"
+
         # LS should avoid loading sinatra/main.rb as it does not need the full Sinatra functionality
         # such as configuration based on ARGV (actually dangerous if there's a --name collision),
         # pretty much the only piece needed is the DSL but even that only for the rackup part :
@@ -121,6 +122,7 @@ module LogStash
         end
       end
 
+      # @private
       def self.rack_namespaces(agent)
         {
           "/_node" => LogStash::Api::Modules::Node,
