@@ -15,6 +15,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
+require 'delegate'
+
 module LogStash::Codecs
   class Delegator < SimpleDelegator
     def initialize(obj)
