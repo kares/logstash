@@ -344,7 +344,7 @@ public final class RubyUtil {
 
 //        SETTINGS_CLASS = LOGSTASH_MODULE.getClass("Settings");
         SETTINGS_CLASS = LOGSTASH_MODULE.defineOrGetClassUnder("Settings", RUBY.getObject());
-        SETTING_CLASS = SETTINGS_CLASS.defineClassUnder("Setting", RUBY.getObject(), SettingExt::new);
+        SETTING_CLASS = LOGSTASH_MODULE.defineClassUnder("Setting", RUBY.getObject(), SettingExt::new);
         SETTING_CLASS.defineAnnotatedMethods(SettingExt.class);
 //        SETTING_CLASS = setupLogstashClass(SETTINGS_CLASS, SettingExt::new, SettingExt.class);
 
